@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Baloo+Bhai+2&display=swap');
+
+body{
+    background-image:url("bg3.jpg");
+    text-align: center;
+    font-family: 'Baloo Bhai 2', cursive;
+    color:white;
+}
+#errormessage{
+    font-size: 15px;
+    position: relative;
+    bottom:60px;
+    height: 20px;
+    color: rgb(56, 56, 56);
+}
+.container {
+    text-shadow: rgb(105, 99, 99) 1px 1px;
+    margin: auto;
+    border-radius: 20px;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3%;
+    width:55%;
+    height:40%;
+}
+.hide{
+    display:none;
+}
+.show{
+    display:contents;
+}
+#weather_icon{
+    padding-right: 2%;
+    height:30%;
+    width:40%;
+}
+#searchIcon{
+    position:relative;
+    left:-35px;
+    color: rgb(56, 56, 56);
+}
+.resultCityInput{
+    margin-top: 5%;
+    margin-bottom: 4%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-color: white;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    opacity: 80%;
+}
+.cityInput{
+    margin-top: 20%;
+    margin-bottom: 4%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-color: white;
+    height: 30px;
+    width:300px;
+    text-align: center;
+    opacity: 80%;
+    font-size:20px;
+}
+#lowhigh{
+    margin:auto;
+    justify-content:space-between;
+}
+#results{
+    background-color: rgba(128, 128, 128, 0);    
+    -webkit-backdrop-filter:(1px);
+    backdrop-filter: blur(10px);
+    max-width: 30%;
+    max-height: 30%;
+    border-radius:10px;
+    margin:auto;
+    box-shadow: 5px 5px 5px black;
+}
+.cityName{
+    font-size:6vh;
+    padding:12%;
+    width: 100%;
+}
+.temperature{
+    font-size:10vh;
+    text-shadow: rgb(105, 99, 99) 2px 2px;
+}
+.description{
+    font-size:3vh;
+}
+.tempHigh{
+    font-size:4vh;          
+}
+.tempLow{
+    font-size:4vh;          
+}
+#lowhigh{
+    justify-content: space-evenly;
+}
