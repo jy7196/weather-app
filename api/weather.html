@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <link rel="stylesheet" href= 
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
+      <link rel="stylesheet" href="weather.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Weather</title>
+   </head>
+   <body>
+      <div id="input_field">
+         <input type="text" placeholder="Enter city" class="cityInput" id="cityInput" ></input>
+         <i class="fa fa-search icon" id="searchIcon"></i>
+         <h1 id="errormessage"></h1>
+      </div>
+      <div class="hide" id="results">
+      <div>
+         <div class="container">
+            <div class="cityName"></div>
+            <img  id = "weather_icon" src="sunny.png">
+            <div class="temperature"></div>
+         </div>
+         <div class="description"></div>
+         <div class = "container" id = "lowhigh">
+            <div class="low"></div>
+            <div class="high"></div>
+         </div>
+      </div>
+      <script src="weather.js"></script>
+   </body>
+</html>
