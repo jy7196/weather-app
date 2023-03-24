@@ -160,11 +160,11 @@ body{
     }
     .cityName{
         position: relative;
-        font-size:1.3em;
+        font-size:1em;
     }
     .temperature{
         position: relative;
-        font-size:1.9em;
+        font-size:1em;
         text-shadow: rgb(105, 99, 99) 2px 2px;
     }
     #results {
