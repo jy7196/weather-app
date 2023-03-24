@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Baloo+Bhai+2&display=swap');
+html{
+    background-size:cover;
+    background-image:url("bg3.jpg") ;
 
+    height: 100%;
+}
 body{
-    background-image:url("bg3.jpg");
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
     color:white;
@@ -22,9 +26,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-bottom: 3%;
-    width:55%;
-    height:40%;
+    width:100%;
+    height:20%;
 }
 .hide{
     display:none;
@@ -33,9 +36,11 @@ body{
     display:contents;
 }
 #weather_icon{
-    padding-right: 2%;
+    position: relative;
+    margin:auto;
+    margin-right: 10%;
     height:30%;
-    width:40%;
+    width:35%;
 }
 #searchIcon{
     position:relative;
@@ -48,8 +53,8 @@ body{
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     border-color: white;
-    height: 30px;
-    width: 300px;
+    height: 4vh;
+    width:35vw;
     text-align: center;
     opacity: 80%;
 }
@@ -59,43 +64,76 @@ body{
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     border-color: white;
-    height: 30px;
-    width:300px;
+    height: 4vh;
+    width:35vw;
     text-align: center;
     opacity: 80%;
-    font-size:20px;
+    font-size:1em;
 }
 #lowhigh{
     margin:auto;
     justify-content:space-between;
 }
+@media (min-width: 100px) and (max-width:500px) {
+    #results {
+        padding:5%;
+        padding-bottom: 8%;
+        min-width:80vw;
+        max-height:33vh;
+    }
+    .cityInput{
+        margin-top: 50%;
+        height: 4vh;
+        width:45vw;
+    }
+    .resultCityInput{
+        height: 4vh;
+        width:45vw;
+    }
+  }
+  @media (min-width: 501px) and (max-width:900px) {
+    #results {
+        padding:5%;
+        min-width:50vw;
+        max-height:28vh;
+    }
+    .cityInput{
+        margin-top: 50%;
+        height: 4vh;
+        width:45vw;
+    }
+    .resultCityInput{
+        height: 4vh;
+        width:45vw;
+    }
+  }
 #results{
     background-color: rgba(128, 128, 128, 0);    
     -webkit-backdrop-filter:(1px);
     backdrop-filter: blur(10px);
-    max-width: 30%;
-    max-height: 30%;
+    width:35vw;
+    height:55vh;
     border-radius:10px;
     margin:auto;
     box-shadow: 5px 5px 5px black;
 }
 .cityName{
-    font-size:6vh;
-    padding:12%;
-    width: 100%;
+    position: relative;
+    font-size:1.5em;
 }
 .temperature{
-    font-size:10vh;
+    position: relative;
+    font-size:2.5em;
     text-shadow: rgb(105, 99, 99) 2px 2px;
 }
 .description{
-    font-size:3vh;
+    font-size:1em;
 }
 .tempHigh{
-    font-size:4vh;          
+    font-size:1em;          
 }
 .tempLow{
-    font-size:4vh;          
+    font-size:1em;          
 }
 #lowhigh{
     justify-content: space-evenly;
