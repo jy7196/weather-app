@@ -117,6 +117,8 @@ body{
         text-shadow: rgb(105, 99, 99) 2px 2px;
     }
     #results {
+        -webkit-backdrop-filter:(1px);
+        backdrop-filter: blur(10px);
         padding:5%;
         min-width:80vw;
         max-height:33vh;
@@ -133,6 +135,8 @@ body{
   }
   @media (min-width: 501px) and (max-width:900px) {
     #results {
+        -webkit-backdrop-filter:(1px);
+        backdrop-filter: blur(10px);
         padding:5%;
         min-width:65vw;
         max-height:39vh;
