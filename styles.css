@@ -169,9 +169,9 @@ body{
     }
     #results {
         min-width: 38vw;
-        height:50vh;
+        height:45vh;
         margin-top: -7vh;
-        max-height: 50vh;
+        max-height: 45vh;
         backdrop-filter: blur(.5em);
         -webkit-backdrop-filter: blur(.5em);
         padding:2%;
@@ -213,7 +213,7 @@ body{
 
   /*Lanscape Tab*/
 
-  @media (min-width: 700px) and (max-width:1200px) and (min-height: 700px) and (max-height:900px) {
+  @media (min-width: 1000px) and (max-width:1200px) and (min-height: 700px) and (max-height:900px) {
     #results {
         backdrop-filter: blur(.5em);
         -webkit-backdrop-filter: blur(.5em);
