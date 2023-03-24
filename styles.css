@@ -6,7 +6,6 @@ html{
     width: 100%;
 }
 body{
-    overflow: hidden;
     box-sizing: border-box;
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
@@ -152,6 +151,10 @@ body{
 
 /* Landscape phone */
 @media (min-width: 650px) and (max-width:900px) and (min-height: 350px) and (max-height:500px) {
+    html{
+        min-width: 105%;
+
+    }
     #weather_icon{
         position: relative;
         margin:auto;
