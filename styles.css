@@ -5,6 +5,7 @@ html{
     height: 100%;
 }
 body{
+    overflow: hidden;
     box-sizing: border-box;
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
