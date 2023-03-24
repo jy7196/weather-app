@@ -160,16 +160,17 @@ body{
     }
     .cityName{
         position: relative;
-        font-size:1.5em;
+        font-size:1.3em;
     }
     .temperature{
         position: relative;
-        font-size:2.5em;
+        font-size:1.9em;
         text-shadow: rgb(105, 99, 99) 2px 2px;
     }
     #results {
         min-width: 38vw;
         height:58vh;
+        margin-top: -7vh;
         max-height: 58vh;
         backdrop-filter: blur(.5em);
         -webkit-backdrop-filter: blur(.5em);
