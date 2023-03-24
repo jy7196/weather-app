@@ -80,7 +80,6 @@ body{
 
 #results{
     background-color: rgba(128, 128, 128, 0);    
-    -webkit-backdrop-filter:(1px);
     backdrop-filter: blur(10px);
     width:35vw;
     height:58vh;
@@ -117,7 +116,8 @@ body{
         text-shadow: rgb(105, 99, 99) 2px 2px;
     }
     #results {
-        background-color: rgba(128, 128, 128, 0.137);    
+        -webkit-backdrop-filter:(1px);
+        backdrop-filter: blur(10px);
         padding:5%;
         min-width:80vw;
         max-height:33vh;
