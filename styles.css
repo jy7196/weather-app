@@ -169,9 +169,9 @@ body{
     }
     #results {
         min-width: 38vw;
-        height:58vh;
+        height:50vh;
         margin-top: -7vh;
-        max-height: 58vh;
+        max-height: 50vh;
         backdrop-filter: blur(.5em);
         -webkit-backdrop-filter: blur(.5em);
         padding:2%;
