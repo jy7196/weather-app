@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Baloo+Bhai+2&display=swap');
+@keyframes slide {
+    0% { left: -130%;}
+    100% { left: 150%;}
+}
 html{
     background-size:cover;
     background-image:url("bg3.jpg") ;
     height: 100%;
 }
+
 body{
     overflow: hidden;
     box-sizing: border-box;
@@ -49,7 +54,7 @@ body{
     left:-35px;
     color: rgb(56, 56, 56);
 }
-.resultCityInput{
+#resultCityInput{
     margin-top: 5%;
     margin-bottom: 0;
     background-color: rgb(255, 255, 255);
@@ -60,7 +65,87 @@ body{
     text-align: center;
     opacity: 80%;
 }
-.cityInput{
+#clouds{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#cloud1{
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 150s;
+    animation-iteration-count: infinite;
+    top:50%;
+    opacity: 0.7;
+    height: 100%;
+}
+#cloud2{
+    left:-150%;
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 170s;
+    animation-iteration-count: infinite;
+    animation-delay:10s;
+    top:50%;
+    opacity: 0.7;
+    height: 100%;
+}
+#cloud3{
+    left: 150%;
+    top: 70%;
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 150s;
+    animation-delay:20s;
+    animation-iteration-count: infinite;
+    opacity: 0.7;
+    height: 100%;
+}
+#cloud4{
+    left: 150%;
+    top: 60%;
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 150s;
+    animation-delay:60s;
+    animation-iteration-count: infinite;
+    opacity: 0.7;
+    height: 100%;
+}
+#cloud5{
+    left: 150%;
+    top: 65%;
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 200s;
+    animation-delay:80s;
+    animation-iteration-count: infinite;
+    opacity: 0.7;
+    height: 100%;
+}
+#cloud6{
+left:150%;
+    top: 60%;
+    position: absolute;
+    animation-name: slide;
+    animation-duration: 100s;
+    animation-delay:120s;
+    animation-iteration-count: infinite;
+    opacity: 0.7;
+    height: 100%;
+}
+#cloud7{
+    left:150%;
+        top: 60%;
+        position: absolute;
+        animation-name: slide;
+        animation-duration: 150s;
+        animation-delay:210s;
+        animation-iteration-count: infinite;
+        opacity: 0.7;
+        height: 100%;
+    }
+#cityInput{
     margin-top: 20%;
     margin-bottom: 4%;
     background-color: rgb(255, 255, 255);
@@ -83,29 +168,29 @@ body{
     backdrop-filter: blur(.5em);
     -webkit-backdrop-filter: blur(.5em);
     width:35vw;
-    height:55vh;
-    max-height: 55vh;
+    height:50vh;
+    max-height: 50vh;
     border-radius:10px;
     margin:auto;
-    padding: 3%;
+    padding: 2%;
     box-shadow: 9px 9px 9px black;
 }
-.cityName{
+#cityName{
     position: relative;
-    font-size:2.5em;
+    font-size:2.2em;
 }
-.temperature{
+#temperature{
     position: relative;
-    font-size:4em;
+    font-size:3.5em;
     text-shadow: rgb(105, 99, 99) 2px 2px;
 }
-.description{
+#description{
     font-size:1em;
 }
-.tempHigh{
+#tempHigh{
     font-size:1em;          
 }
-.tempLow{
+#tempLow{
     font-size:1em;          
 }
 #lowhigh{
@@ -121,6 +206,15 @@ body{
         height:20%;
         width:28%;
     }
+    html{
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    #errormessage{
+        top:0;
+    }
+
     .cityName{
         position: relative;
         font-size:1.7em;
