@@ -136,7 +136,7 @@ body{
     opacity: 0.6;
     top:6%;
     left:-150%;
-    height: 100%;
+    height: 30%;
 }
 #cloud2{
     left:0%;
@@ -144,7 +144,7 @@ body{
     animation-name: slide;
     top:5%;
     opacity: 0.6;
-    height: 100%;
+    height: 60%;
 }
 #cloud3{
     left:-150%;
@@ -152,35 +152,35 @@ body{
     position: fixed;
     animation-name: slide;
     opacity: 0.6;
-    height: 100%;
+    height: 60%;
 }
 #cloud4{
     left:-100%;
     top: 30%;
     position: fixed;
     opacity: 0.7;
-    height: 100%;
+    height: 80%;
 }
 #cloud5{
     left:-150%;
     top: 10%;
     position: fixed;
     opacity: 0.6;
-    height: 100%;
+    height: 40%;
 }
 #cloud6{
     left:-150%;
     top: 30%;
     position: fixed;
     opacity: 0.6;
-    height: 100%;
+    height: 50%;
 }
 #cloud7{
     left:-150%;
         top: 50%;
         position: fixed;
         opacity: 0.6;
-        height: 100%;
+        height: 70%;
     }
 .cityInput{
     margin-top: 20%;
@@ -247,6 +247,7 @@ body{
         max-width: 97vw;
         overflow: hidden;
     }
+
     #daytimesun{
         width: 32vw;
         height:25vh;
@@ -263,7 +264,7 @@ body{
         position: fixed;
         top:-5%;
         left: 0%;
-        width:105vw;
+        width:150vw;
         height:100vh;
         opacity: 0.6;
     }
