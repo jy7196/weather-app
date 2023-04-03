@@ -34,10 +34,10 @@
   }
   @keyframes sunIn {
     0% {left: -30%; top: 20%;}
-    100% {left: 0%; top: 0%;}
+    100% {left: 0%; top: 5%;}
   }
   @keyframes sunOut {
-    0% {left: 0%; top: 0%;}
+    0% {left: 0%; top: 5%;}
     100% {left: -30%; top: 20%;}
 
   }
