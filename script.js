@@ -1,4 +1,4 @@
-document.querySelector(".cityInput").addEventListener("keydown", (e) => {
+document.getElementById("cityInput").addEventListener("keydown", (e) => {
     if (e.keyCode === 13){
         main();
     }
@@ -7,7 +7,48 @@ document.querySelector(".cityInput").addEventListener("keydown", (e) => {
 function main(){
     getWeather();
 }
+function fadeCloudsIn(){
+    document.getElementById("cloud1").style.animation="fadeIn 1s linear";
+    document.getElementById("cloud2").style.animation="fadeIn 1s linear";
+    document.getElementById("cloud3").style.animation="fadeIn 1s linear";
+    document.getElementById("cloud4").style.animation="fadeIn 1s linear";
+    document.getElementById("cloud5").style.animation="fadeIn 1s linear";
+    document.getElementById("cloud6").style.animation="fadeIn 1s linear";
+    document.getElementById("cloud7").style.animation="fadeIn 1s linear";
+    document.getElementById("clouds").className ="show";
+    setTimeout(function(){
+        document.getElementById("cloud1").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud2").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud3").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud4").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud5").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud6").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud7").style.animation="slide 170s linear infinite";
+    }, 1000);
+}
+function fadeCloudsOut(){
+    document.getElementById("cloud1").style.animation="fadeOut 1s linear";
+    document.getElementById("cloud2").style.animation="fadeOut 1s linear";
+    document.getElementById("cloud3").style.animation="fadeOut 1s linear";
+    document.getElementById("cloud4").style.animation="fadeOut 1s linear";
+    document.getElementById("cloud5").style.animation="fadeOut 1s linear";
+    document.getElementById("cloud6").style.animation="fadeOut 1s linear";
+    document.getElementById("cloud7").style.animation="fadeOut 1s linear";
+    setTimeout(function(){
+        document.getElementById("clouds").className ="hide";
 
+    }, 1000);
+}
+function sunIn(){
+    document.getElementById("daytimesun").style.animation="sunIn 3s linear";
+    document.getElementById("daytimesun").style.animationFillMode = "forwards";
+
+}
+function sunOut(){
+    document.getElementById("daytimesun").style.animation="sunOut 2s linear";
+    document.getElementById("daytimesun").style.animationFillMode = "forwards";
+
+}
 function getWeather(){
     var cityName = document.getElementById("cityInput").value;
     var key = "2a216c48999dbe58000d0dad02f5dbcf"
@@ -28,12 +69,29 @@ function getWeather(){
         timestamp = timestamp + offset;
         var image = document.getElementById("weather_icon");
         if (timestamp >= sunrise && timestamp <= sunset){
+            sunIn();
+            document.getElementById("stars").style.animation="fadeOut 1s linear";
+            setTimeout(function(){
+                document.getElementById("stars").className ="hide";
+            }, 1000);
+
+        var color = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');  
+            if (color === "rgb(17, 17, 60)"){
+                document.body.style.animation="nighttoday 1s linear";
+            }
+            document.body.style.backgroundColor = "rgb(131, 179, 245)";
+
             if(desc.includes("clear")){
                 image.src = "sunny.png";
+                fadeCloudsOut();
+  
+
                 desc = "Clear";
             }
             else if(desc.includes("cloud")){
                 image.src = "cloudy.png";
+                fadeCloudsIn();
+
             }
             else if(desc.includes("rain")){
                 image.src = "rain.png";
@@ -46,12 +104,28 @@ function getWeather(){
             }
         }
         else{
+
+
+            var color = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');  
+            if (color === "rgb(131, 179, 245)"){
+                document.body.style.animation="daytonight 1s linear";
+                sunOut();
+            }
+            document.getElementById("stars").style.animation="fadeIn 1s linear";
+            setTimeout(function(){
+                document.getElementById("stars").className = ".show";
+            }, 1000);
+            document.body.style.backgroundColor = "rgb(17, 17, 60)";
+            
             if(desc.includes("clear")){
                 image.src = "moon.png";
                 desc = "Clear";
+                fadeCloudsOut();
+
             }
             else if(desc.includes("cloud")){
                 image.src = "cloudynight.png";
+                fadeCloudsIn();
             }
             else if(desc.includes("rain")){
                 image.src = "rain.png";
@@ -69,15 +143,14 @@ function getWeather(){
             descriptionStrings[i] = descriptionStrings[i][0].toUpperCase() + descriptionStrings[i].substr(1);
             desc += descriptionStrings[i] + " ";
         }
-
         document.querySelector('#errormessage').innerHTML = "";
-        document.querySelector('.cityName').innerHTML = cityName.toUpperCase();
-        document.querySelector('.temperature').innerHTML = temp.toString().toUpperCase() + "°F";
-        document.querySelector('.description').innerHTML = "Current Forecast:  " + desc;
-        document.querySelector('.low').innerHTML = "Low: " + low.toString().toUpperCase() + "°F";
-        document.querySelector('.high').innerHTML = "High: " + high.toString().toUpperCase() + "°F";
-        document.getElementById("cityInput").className = "resultCityInput";
-        document.getElementById("results").className = ".show";
+        document.querySelector('#cityName').innerHTML = cityName.toUpperCase();
+        document.querySelector('#temperature').innerHTML = temp.toString().toUpperCase() + "°F";
+        document.querySelector('#description').innerHTML = "Current Forecast:  " + desc;
+        document.querySelector('#low').innerHTML = "Low: " + low.toString().toUpperCase() + "°F";
+        document.querySelector('#high').innerHTML = "High: " + high.toString().toUpperCase() + "°F";
+        document.querySelector("#cityInput").className = "resultCityInput";
+        document.querySelector("#results").className = ".show";
     }
         else{
             document.querySelector('#errormessage').innerHTML = "City not found!";
