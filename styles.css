@@ -1,20 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Baloo+Bhai+2&display=swap');
 @keyframes slide {
-    0% { left: -130%;}
-    100% { left: 150%;}
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(150%);}
 }
+@keyframes daytonight {
+    0% { background-color: rgb(131, 179, 245);}
+    80% {background-color: rgb(15, 15, 113);}
+    100% {background-color: rgb(17, 17, 60);}
+   }
+   @keyframes nighttoday {
+    0% { background: rgb(17, 17, 60);}
+    80% {background-color: rgb(15, 15, 113);}
+    100% {background-color: rgb(131, 179, 245);}
+   }
+   @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:0.6;}
+  }
+  @keyframes fadeOut {
+    0% {opacity:0.6;}
+    100% {opacity:0;}
+  }
+  @keyframes sunanimate {
+    0% { transform: rotate(0deg);    
+        transform: scale(1);
+    }
+    50% { transform: rotate(45Sdeg);
+        transform: scale(1.8);
+    }
+    100% { transform: rotate(45Sdeg);
+        transform: scale(1);
+    }
+  }
+  @keyframes sunIn {
+    0% {left: -30%; top: 20%;}
+    100% {left: 0%; top: 0%;}
+  }
+  @keyframes sunOut {
+    0% {left: 0%; top: 0%;}
+    100% {left: -30%; top: 20%;}
+
+  }
 html{
-    background-size:cover;
-    background-image:url("bg3.jpg") ;
-    height: 100%;
+    height:100vh;
+    width:100vw;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 body{
-    overflow: hidden;
+    background-color: rgb(119, 166, 232);
+    background-size: cover;
+    max-height: 100vh;
+    max-width: 100vw;
     box-sizing: border-box;
     text-align: center;
     font-family: 'Baloo Bhai 2', cursive;
     color:white;
+}
+#stars{
+    position: fixed;
+    top:-5%;
+    left: 0%;
+    width:100vw;
+    height:110vh;
+    opacity: 0.6;
 }
 #errormessage{
     font-size: 15px;
@@ -22,6 +73,13 @@ body{
     bottom:60px;
     height: 20px;
     color: rgb(56, 56, 56);
+}
+#daytimesun{
+    width: 25vw;
+    height:50vh;
+    position: absolute;
+    top:0%;
+    left: -30%;
 }
 .container {
     text-shadow: rgb(105, 99, 99) 1px 1px;
@@ -54,7 +112,7 @@ body{
     left:-35px;
     color: rgb(56, 56, 56);
 }
-#resultCityInput{
+.resultCityInput{
     margin-top: 5%;
     margin-bottom: 0;
     background-color: rgb(255, 255, 255);
@@ -66,86 +124,65 @@ body{
     opacity: 80%;
 }
 #clouds{
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top:60%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 #cloud1{
-    position: absolute;
-    animation-name: slide;
-    animation-duration: 150s;
-    animation-iteration-count: infinite;
-    top:50%;
-    opacity: 0.7;
+
+    position: fixed;
+    opacity: 0.6;
+    top:6%;
+    left:-150%;
     height: 100%;
 }
 #cloud2{
-    left:-150%;
-    position: absolute;
+    left:0%;
+    position: fixed;
     animation-name: slide;
-    animation-duration: 170s;
-    animation-iteration-count: infinite;
-    animation-delay:10s;
-    top:50%;
-    opacity: 0.7;
+    top:5%;
+    opacity: 0.6;
     height: 100%;
 }
 #cloud3{
-    left: 150%;
-    top: 70%;
-    position: absolute;
+    left:-150%;
+    top: 10%;
+    position: fixed;
     animation-name: slide;
-    animation-duration: 150s;
-    animation-delay:20s;
-    animation-iteration-count: infinite;
-    opacity: 0.7;
+    opacity: 0.6;
     height: 100%;
 }
 #cloud4{
-    left: 150%;
-    top: 60%;
-    position: absolute;
-    animation-name: slide;
-    animation-duration: 150s;
-    animation-delay:60s;
-    animation-iteration-count: infinite;
+    left:-100%;
+    top: 30%;
+    position: fixed;
     opacity: 0.7;
     height: 100%;
 }
 #cloud5{
-    left: 150%;
-    top: 65%;
-    position: absolute;
-    animation-name: slide;
-    animation-duration: 200s;
-    animation-delay:80s;
-    animation-iteration-count: infinite;
-    opacity: 0.7;
+    left:-150%;
+    top: 10%;
+    position: fixed;
+    opacity: 0.6;
     height: 100%;
 }
 #cloud6{
-left:150%;
-    top: 60%;
-    position: absolute;
-    animation-name: slide;
-    animation-duration: 100s;
-    animation-delay:120s;
-    animation-iteration-count: infinite;
-    opacity: 0.7;
+    left:-150%;
+    top: 30%;
+    position: fixed;
+    opacity: 0.6;
     height: 100%;
 }
 #cloud7{
-    left:150%;
-        top: 60%;
-        position: absolute;
-        animation-name: slide;
-        animation-duration: 150s;
-        animation-delay:210s;
-        animation-iteration-count: infinite;
-        opacity: 0.7;
+    left:-150%;
+        top: 50%;
+        position: fixed;
+        opacity: 0.6;
         height: 100%;
     }
-#cityInput{
+.cityInput{
     margin-top: 20%;
     margin-bottom: 4%;
     background-color: rgb(255, 255, 255);
@@ -162,14 +199,17 @@ left:150%;
     margin-top: -2vh;
     justify-content:space-between;
 }
-
-#results{
+.blur{
     background-color: rgba(128, 128, 128, 0);    
     backdrop-filter: blur(.5em);
     -webkit-backdrop-filter: blur(.5em);
+}
+#results{
+    background-color: rgba(62, 65, 98, 0.199);   
+    backdrop-filter: blur(0.1em);
     width:35vw;
-    height:50vh;
-    max-height: 50vh;
+    height:55vh;
+    max-height: 55vh;
     border-radius:10px;
     margin:auto;
     padding: 2%;
@@ -199,6 +239,34 @@ left:150%;
 
 /* Portrait phone */
 @media (min-width: 300px) and (max-width:500px) and (min-height: 600px) and (max-height:950px) {
+    body,html{
+        background-size: cover;
+        height:100vh;
+        width: 100vw;
+        max-height: 100vh;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+    #daytimesun{
+        width: 32vw;
+        height:25vh;
+        position: absolute;
+        top:0%;
+        left: -30%;
+    }
+
+    #clouds{
+        width: 105%;
+        overflow: hidden;
+    }
+    #stars{
+        position: fixed;
+        top:-5%;
+        left: 0%;
+        width:105vw;
+        height:100vh;
+        opacity: 0.6;
+    }
     #weather_icon{
         position: relative;
         margin:auto;
@@ -206,11 +274,7 @@ left:150%;
         height:20%;
         width:28%;
     }
-    html{
-        background-size: cover;
-        height: 100vh;
-        width: 100vw;
-    }
+
     #errormessage{
         top:0;
     }
@@ -228,7 +292,8 @@ left:150%;
         backdrop-filter: blur(.5em);
         -webkit-backdrop-filter: blur(.5em);
         min-width:80vw;
-        max-height:30vh;
+        max-height:40vh;
+        margin-top: 10%;
         box-shadow: 9px 9px 9px black;
 
     }
