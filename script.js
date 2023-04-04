@@ -36,17 +36,32 @@ function fadeCloudsOut(){
     document.getElementById("cloud7").style.animation="fadeOut 1s linear";
     setTimeout(function(){
         document.getElementById("clouds").className ="hide";
-
     }, 1000);
 }
 function sunIn(){
     document.getElementById("daytimesun").style.animation="sunIn 3s linear";
     document.getElementById("daytimesun").style.animationFillMode = "forwards";
-
 }
 function sunOut(){
     document.getElementById("daytimesun").style.animation="sunOut 2s linear";
     document.getElementById("daytimesun").style.animationFillMode = "forwards";
+}
+function rainIn(){
+    document.getElementById("rainbg").style.left ="-10%";
+    document.getElementById("rainbg").style.top ="-150%";
+
+    document.getElementById("rainbg").style.animation="fadeIn 1s linear";
+    setTimeout(function(){
+        document.getElementById("rainbg").className ="show";
+        document.getElementById("rainbg").style.animation="rain 0.5s linear infinite";
+
+    }, 1000);
+}
+function rainOut(){
+    document.getElementById("rainbg").style.animation="fadeOut 1s linear";
+    setTimeout(function(){
+        document.getElementById("rainbg").className ="hide";
+    }, 1000);
 
 }
 function getWeather(){
@@ -84,27 +99,29 @@ function getWeather(){
             if(desc.includes("clear")){
                 image.src = "sunny.png";
                 fadeCloudsOut();
-  
-
-                desc = "Clear";
+                rainOut();
             }
             else if(desc.includes("cloud")){
                 image.src = "cloudy.png";
                 fadeCloudsIn();
-
+                rainOut();
             }
             else if(desc.includes("rain")){
                 image.src = "rain.png";
+                fadeCloudsIn();
+                rainIn();
             }
             else if(desc.includes("mist")){
                 image.src = "daymist.png";
+                rainOut();
+
             }
             else if(desc.includes("thunder")){
                 image.src = "thunder.png";
+                rainIn();
             }
         }
         else{
-
 
             var color = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');  
             if (color === "rgb(131, 179, 245)"){
@@ -121,20 +138,27 @@ function getWeather(){
                 image.src = "moon.png";
                 desc = "Clear";
                 fadeCloudsOut();
-
+                rainOut();
             }
             else if(desc.includes("cloud")){
                 image.src = "cloudynight.png";
                 fadeCloudsIn();
+                rainOut();
+
             }
             else if(desc.includes("rain")){
                 image.src = "rain.png";
+                fadeCloudsIn();
+                rainIn();
             }
             else if(desc.includes("mist")){
                 image.src = "nightmist.png";
+                fadeCloudsIn();
             }
             else if(desc.includes("thunder")){
                 image.src = "thunder.png";
+                fadeCloudsIn();
+                rainIn();
             }
         }
         let descriptionStrings = desc.split(" ");
