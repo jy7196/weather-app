@@ -41,6 +41,16 @@ function fadeCloudsOut(){
 function sunIn(){
     document.getElementById("daytimesun").style.animation="sunIn 3s linear";
     document.getElementById("daytimesun").style.animationFillMode = "forwards";
+
+    setTimeout(function(){
+       var ypos =  window.scrollY + document.querySelector('#daytimesun').getBoundingClientRect().top +"px"; // Y
+       var xpos = window.scrollX + document.querySelector('#daytimesun').getBoundingClientRect().left +"px";
+
+        document.getElementById("daytimesun").style.animation="sunanimate 5s linear infinite";
+        document.getElementById("daytimesun").style.left = xpos;
+        document.getElementById("daytimesun").style.top = ypos;
+       
+    }, 3000);
 }
 function sunOut(){
     document.getElementById("daytimesun").style.animation="sunOut 2s linear";
@@ -50,15 +60,27 @@ function rainIn(){
     document.getElementById("rainbg").style.left ="-10%";
     document.getElementById("rainbg").style.top ="-150%";
 
-    document.getElementById("rainbg").style.animation="fadeIn 1s linear";
+    document.getElementById("rainbg").style.animation="rainFadeIn 1s linear";
     setTimeout(function(){
         document.getElementById("rainbg").className ="show";
         document.getElementById("rainbg").style.animation="rain 0.5s linear infinite";
 
     }, 1000);
 }
+function snowIn(){
+    document.getElementById("snowbg").style.animation="fadeIn 1s linear";
+    setTimeout(function(){
+        document.getElementById("snowbg").className ="show";
+    }, 1000);
+}
+function snowOut(){
+    document.getElementById("snowbg").style.animation="fadeOut 1s linear";
+    setTimeout(function(){
+        document.getElementById("snowbg").className ="hide";
+    }, 1000);
+}
 function rainOut(){
-    document.getElementById("rainbg").style.animation="fadeOut 1s linear";
+    document.getElementById("rainbg").style.animation="rainFadeOut 1s linear";
     setTimeout(function(){
         document.getElementById("rainbg").className ="hide";
     }, 1000);
@@ -100,25 +122,36 @@ function getWeather(){
                 image.src = "sunny.png";
                 fadeCloudsOut();
                 rainOut();
+                snowOut();
             }
             else if(desc.includes("cloud")){
                 image.src = "cloudy.png";
                 fadeCloudsIn();
                 rainOut();
+                snowOut();
             }
-            else if(desc.includes("rain")){
+            else if(desc.includes("rain") || desc.includes("drizzle")){
                 image.src = "rain.png";
                 fadeCloudsIn();
                 rainIn();
+                snowOut();
             }
             else if(desc.includes("mist")){
                 image.src = "daymist.png";
                 rainOut();
+                snowOut();
 
             }
             else if(desc.includes("thunder")){
                 image.src = "thunder.png";
                 rainIn();
+                snowOut();
+            }
+            else if(desc.includes("snow")){
+                image.src = "snow.png";
+                rainOut();
+                fadeCloudsIn();
+                snowIn();
             }
         }
         else{
@@ -139,26 +172,38 @@ function getWeather(){
                 desc = "Clear";
                 fadeCloudsOut();
                 rainOut();
+                snowOut();
             }
             else if(desc.includes("cloud")){
                 image.src = "cloudynight.png";
                 fadeCloudsIn();
                 rainOut();
+                snowOut();
 
             }
-            else if(desc.includes("rain")){
+            else if(desc.includes("rain") || desc.includes("drizzle")){
                 image.src = "rain.png";
                 fadeCloudsIn();
                 rainIn();
+                snowOut();
             }
             else if(desc.includes("mist")){
                 image.src = "nightmist.png";
                 fadeCloudsIn();
+                snowOut();
             }
             else if(desc.includes("thunder")){
                 image.src = "thunder.png";
                 fadeCloudsIn();
                 rainIn();
+                snowOut();
+            }
+            else if(desc.includes("snow")){
+                image.src = "snow.png";
+                fadeCloudsIn();
+                rainOut();
+
+                snowIn();
             }
         }
         let descriptionStrings = desc.split(" ");
