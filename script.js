@@ -8,6 +8,7 @@ function main(){
     getWeather();
 }
 function fadeCloudsIn(){
+    document.getElementById("cloud2").style.left="0";
     document.getElementById("cloud1").style.animation="fadeIn 1s linear";
     document.getElementById("cloud2").style.animation="fadeIn 1s linear";
     document.getElementById("cloud3").style.animation="fadeIn 1s linear";
@@ -17,14 +18,17 @@ function fadeCloudsIn(){
     document.getElementById("cloud7").style.animation="fadeIn 1s linear";
     document.getElementById("clouds").className ="show";
     setTimeout(function(){
-        document.getElementById("cloud1").style.animation="slide 170s linear infinite";
-        document.getElementById("cloud2").style.animation="slide 170s linear infinite";
-        document.getElementById("cloud3").style.animation="slide 170s linear infinite";
-        document.getElementById("cloud4").style.animation="slide 170s linear infinite";
-        document.getElementById("cloud5").style.animation="slide 170s linear infinite";
-        document.getElementById("cloud6").style.animation="slide 170s linear infinite";
-        document.getElementById("cloud7").style.animation="slide 170s linear infinite";
+        document.getElementById("cloud1").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud2").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud3").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud4").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud5").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud6").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud7").style.animation="slide 150s linear infinite";
     }, 1000);
+    setTimeout(function(){
+        document.getElementById("cloud2").style.left="-90%";
+    }, 151000);
 }
 function fadeCloudsOut(){
     document.getElementById("cloud1").style.animation="fadeOut 1s linear";
@@ -212,7 +216,7 @@ function getWeather(){
             descriptionStrings[i] = descriptionStrings[i][0].toUpperCase() + descriptionStrings[i].substr(1);
             desc += descriptionStrings[i] + " ";
         }
-        document.querySelector('#errormessage').innerHTML = "";
+        document.querySelector('#errormessage').className = "hide";
         document.querySelector('#cityName').innerHTML = cityName.toUpperCase();
         document.querySelector('#temperature').innerHTML = temp.toString().toUpperCase() + "°F";
         document.querySelector('#description').innerHTML = "Current Forecast:  " + desc;
@@ -222,7 +226,7 @@ function getWeather(){
         document.querySelector("#results").className = ".show";
     }
         else{
-            document.querySelector('#errormessage').innerHTML = "City not found!";
+            document.querySelector('#errormessage').className = "show";
         }
     }
     request.send();
