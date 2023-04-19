@@ -18,16 +18,16 @@ function fadeCloudsIn(){
     document.getElementById("cloud7").style.animation="fadeIn 1s linear";
     document.getElementById("clouds").className ="show";
     setTimeout(function(){
-        document.getElementById("cloud1").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud1").style.animation="slide 130s linear infinite";
         document.getElementById("cloud2").style.animation="slide 150s linear infinite";
-        document.getElementById("cloud3").style.animation="slide 150s linear infinite";
-        document.getElementById("cloud4").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud3").style.animation="slide 100s linear infinite";
+        document.getElementById("cloud4").style.animation="slide 160s linear infinite";
         document.getElementById("cloud5").style.animation="slide 150s linear infinite";
-        document.getElementById("cloud6").style.animation="slide 150s linear infinite";
-        document.getElementById("cloud7").style.animation="slide 150s linear infinite";
+        document.getElementById("cloud6").style.animation="slide 130s linear infinite";
+        document.getElementById("cloud7").style.animation="slide 110s linear infinite";
     }, 1000);
     setTimeout(function(){
-        document.getElementById("cloud2").style.left="-90%";
+        document.getElementById("cloud2").style.left="-150%";
     }, 151000);
 }
 function fadeCloudsOut(){
@@ -206,7 +206,6 @@ function getWeather(){
                 image.src = "snow.png";
                 fadeCloudsIn();
                 rainOut();
-
                 snowIn();
             }
         }
